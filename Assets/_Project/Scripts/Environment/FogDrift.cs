@@ -18,7 +18,6 @@ public class FogDrift : MonoBehaviour
     {
         startPosition = transform.position;
         driftSpeed = Random.Range(minSpeed, maxSpeed);
-        Debug.Log($"driftSpeed: {driftSpeed}");
     }
 
     void Update()
