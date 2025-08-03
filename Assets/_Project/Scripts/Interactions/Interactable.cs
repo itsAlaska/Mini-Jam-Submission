@@ -3,6 +3,9 @@ using UnityEngine;
 public class Interactable : MonoBehaviour
 {
     [SerializeField] private GameObject promptUI;
+    [SerializeField] public Transform worldTargetPosition;
+    [SerializeField] public Transform cameraTargetPosition;
+    [SerializeField] public Transform cameraTarget;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
