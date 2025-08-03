@@ -7,6 +7,7 @@ public class PuzzleTVManager : MonoBehaviour
     [SerializeField] private PuzzleTVInteract[] puzzleTVs;
     [SerializeField] private int[] correctImageIndices;
     [SerializeField] private GameObject memoryCutscene;
+    [SerializeField] private Collider2D subwayStairsCollider;
 
     [Header("Events")]
     [SerializeField] private UnityEvent onPuzzleSolved;
@@ -21,6 +22,13 @@ public class PuzzleTVManager : MonoBehaviour
     [SerializeField] private float moveSpeed = 2f;
 
     private bool puzzleSolved = false;
+    
+    private void Start()
+    {
+        if (subwayStairsCollider != null)
+            subwayStairsCollider.enabled = false;
+    }
+
 
     public void CheckPuzzleState()
     {
@@ -104,6 +112,10 @@ public class PuzzleTVManager : MonoBehaviour
         {
             hubTV.SetSolvedImage(puzzleTVs[0].GetCurrentSprite());
         }
+        
+        // Enable subway stairs interaction
+        if (subwayStairsCollider != null)
+            subwayStairsCollider.enabled = true;
 
     }
 
